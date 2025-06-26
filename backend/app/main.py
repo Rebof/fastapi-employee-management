@@ -9,7 +9,8 @@ from app.routers import (
     training,
     work_experience,
     employee_skilllevel,
-    auth
+    auth, 
+    education_degree
 )
 from fastapi import Depends
 from app.auth.oauth2 import get_current_admin
@@ -27,6 +28,7 @@ app.include_router(employee_skill.router, prefix="/api/v1/skills", tags=["Skills
 app.include_router(employee_skilllevel.router, prefix="/skilllevels", tags=["Employee Skill Levels"])
 
 app.include_router(academic.router, prefix="/api/v1/academics", tags=["Academics"])
+app.include_router(education_degree.router, prefix="/api/v1/education-degrees", tags=["Education Degrees"])
 app.include_router(project.router, prefix="/api/v1/projects", tags=["Projects"])
 app.include_router(training.router, prefix="/api/v1/trainings", tags=["Trainings"])
 app.include_router(work_experience.router, prefix="/api/v1/work-experience", tags=["Work-Experience"])
